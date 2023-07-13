@@ -1,8 +1,10 @@
 package com.Tienda.service;
+
 import com.Tienda.entities.Product;
 import java.util.List;
-public interface IProductService {
-    List<Product> getAllProducts();
-      void save(Product product);
-      void delete(Product product);
+import java.util.Optional;
+
+public interface IProductService extends IBaseService<Product, Integer> {
+
+    List<Product> getProductsWithFilters(Optional<Integer> lowerPrice, Optional<Integer> higherPrice);
 }
