@@ -16,7 +16,7 @@ $(document).on("click", ".open-modal", function () {
 
 $(document).on("click", "#saveProduct", function () {
     $("#formProduct").submit();
-})
+});
 
 //Delete
 $(document).on("click", ".btnDeleteProduct", function () {
@@ -33,4 +33,4 @@ $(document).on("click", ".btnDeleteProduct", function () {
         //here we are serialization the object
         data: JSON.stringify(currentProduct)
     });
-})
+});
