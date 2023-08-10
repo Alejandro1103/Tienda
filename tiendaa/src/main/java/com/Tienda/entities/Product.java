@@ -1,5 +1,6 @@
 package com.Tienda.entities;
 import jakarta.persistence.*;
+import jdk.jfr.Category;
 @Entity
 @Table(name = "producto")
 public class Product {
@@ -81,6 +82,10 @@ public class Product {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public void setCategory(Category category) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

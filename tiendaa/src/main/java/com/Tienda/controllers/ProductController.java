@@ -1,6 +1,7 @@
 package com.tienda.controllers;
 import com.Tienda.entities.Product;
 import com.Tienda.service.IProductService;
+import java.lang.annotation.Annotation;
 import java.util.Optional;
 import jdk.jfr.Category;
 import org.springframework.http.HttpStatus;
@@ -21,11 +22,27 @@ public class ProductController {
  
 
         var baseProduct = new Product();
-        baseProduct.setCategory(new Category());
+        baseProduct.setCategory(new Category() {
+            @Override
+            public String[] value() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public Class<? extends Annotation> annotationType() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
         model.addAttribute("productDefault", baseProduct);
         model.addAttribute("products", this.productService.getProductsWithFilters(lowerPrice, higherPrice));
-        model.addAttribute("categories", this.categoryService.getAll());
+        model.addAttribute("categories", this.categoryService.getAll())
         return "product";
+    }
+
+    private class categoryService {
+
+        public categoryService() {
+        }
     }
 
  
